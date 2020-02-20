@@ -1,11 +1,19 @@
 <?php
 
-$database = require 'bootstrap.php';
+require 'core/bootstrap.php';
+// require 'controllers/index.php';
 
-$listbrands = $database->selectAll('brands');
 
-$listbrands = array_map(function ($brand) {
-    return new Brand($brand->brand_id, $brand->brand_name);
-}, $listbrands);
+// $router = new Router;
 
-include 'index.view.php';
+// require 'routes.php';
+
+// require $router->direct('/');
+
+// $uri = trim($_SERVER['REQUEST_URI'], '/');
+
+// require Router::load('routes.php')->direct($uri);
+
+
+
+require Router::load('routes.php')->direct(Request::uri());
