@@ -2,22 +2,24 @@
 
 <h1>Code Gym</h1>
 
-<table class="table table-hover">
-    <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>City</td>
-    </tr>
-    <?php foreach ($listbrands as $brand) : ?>
-
+<div class="container">
+    <a href="/showAddBrand" class="btn btn-primary">Add New Branch</a>
+    <table class="table table-hover">
         <tr>
-            <td><?= $brand->brand_id ?></td>
-            <td><?= $brand->brand_name ?></td>
-            <td><?= $brand->getCity() ?></td>
+            <td>Id</td>
+            <td>Name</td>
+            <td>City</td>
         </tr>
+        <?php foreach ($listbrands as $brand) : ?>
 
-    <?php endforeach; ?>
-</table>
+            <tr>
+                <td><?= $brand->brand_id ?></td>
+                <td><?= $brand->brand_name ?></td>
+                <td><?= $brand->getCity() ?></td>
+            </tr>
 
+        <?php endforeach; ?>
+    </table>
+</div>
 
 <?php require 'partials/footer.php' ?>
