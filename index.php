@@ -1,25 +1,15 @@
 <?php
 
-require 'Brand.php';
+// require 'Brand.php';
+// require 'database/Connection.php';
+// require 'database/QueryBuilder.php';
 
-try {
-    $pdo = new PDO('mysql:host=127.0.0.1:3306;dbname=bikestores;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (PDOException $e) {
-    die($e->getMessage());
-}
+$database = require 'bootstrap.php';
 
-$statement = $pdo->prepare('select * from brands');
-$statement->execute();
+$listbrands = $database->selectAll('brands');
+var_dump($listbrands);
+$listbrands = array_map(function ($brand) {
+    return new Brand($brand->brand_id, $brand->brand_name);
+}, $listbrands);
 
-// var_dump($statement->fetchAll());
-// var_dump($statement->fetchAll(PDO::FETCH_OBJ));
-
-// $results = $statement->fetchAll(PDO::FETCH_OBJ);
-// var_dump($results[0]->brand_name);
-
-$results = $statement->fetchAll(PDO::FETCH_CLASS, 'Brand');
-var_dump($results[0]->getCity());
-
-
-include 'index.view.php'
-?>
+include 'index.view.php';

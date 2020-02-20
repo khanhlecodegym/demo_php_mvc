@@ -13,18 +13,18 @@
 <body>
     <h1>Code Gym</h1>
 
-    <table class="table">
+    <table class="table table-hover">
         <tr>
             <td>Id</td>
             <td>Name</td>
             <td>City</td>
         </tr>
-        <?php foreach ($results as $result) : ?>
+        <?php foreach ($listbrands as $brand) : ?>
 
             <tr>
-                <td><?= $result->brand_id ?></td>
-                <td><?= $result->brand_name ?></td>
-                <td><?= $result->getCity() ?></td>
+                <td><?= $brand->brand_id ?></td>
+                <td><?= $brand->brand_name ?></td>
+                <td><?= $brand->getCity() ?></td>
             </tr>
 
         <?php endforeach; ?>
