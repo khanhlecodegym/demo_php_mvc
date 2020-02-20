@@ -23,7 +23,7 @@ class Router {
             return $this->routes[$uri];
         }
 
-        throw new Exception('Route không xác định.');
+        throw new Exception("Route {$uri} Không xác định");
     }
 
 }
