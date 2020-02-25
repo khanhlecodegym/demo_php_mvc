@@ -3,7 +3,7 @@
 // var_dump($_SERVER);
 
 
-$app['database']->insert('brands', [
+App::get('database')->insert('brands', [
     'brand_name' => $_POST['brand_name']
 ]);
 
