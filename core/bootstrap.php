@@ -4,11 +4,11 @@ $app = [];
 
 $app['config'] = require './config.php';
 
-require 'model/Brand.php';
-require 'Router.php';
-require 'Request.php';
-require 'database/Connection.php';
-require 'database/QueryBuilder.php';
+// require 'model/Brand.php';
+// require 'Router.php';
+// require 'Request.php';
+// require 'database/Connection.php';
+// require 'database/QueryBuilder.php';
 
 // $config = require './config.php';
 
