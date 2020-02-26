@@ -42,4 +42,24 @@ class QueryBuilder
         }
         
     }
+
+    public function search($table, $id) 
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where brand_id = {$id}");
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+        
+    }
+
+    public function update($table, $parameters) 
+    {
+        // die(var_dump("update {$table} set brand_name = {$parameters['brand_name']} where brand_id = {$parameters['brand_id']}"));
+        $statement = $this->pdo->prepare("update {$table} 
+            set brand_name = '{$parameters['brand_name']}' where brand_id = {$parameters['brand_id']}");
+        $statement->execute();
+
+        // return $statement->fetchAll(PDO::FETCH_CLASS);
+        
+    }
 }

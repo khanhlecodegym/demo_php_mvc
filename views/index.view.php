@@ -9,6 +9,7 @@
             <td>Id</td>
             <td>Name</td>
             <td>City</td>
+            <td>Action</td>
         </tr>
         <?php foreach ($listbrands as $brand) : ?>
 
@@ -16,6 +17,7 @@
                 <td><?= $brand->brand_id ?></td>
                 <td><?= $brand->brand_name ?></td>
                 <td><?= $brand->getCity() ?></td>
+                <td><a href="/editbrand?id=<?= $brand->brand_id ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
             </tr>
 
         <?php endforeach; ?>
