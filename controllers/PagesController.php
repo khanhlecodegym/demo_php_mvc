@@ -11,14 +11,19 @@ class PagesController
             return new Brand($brand->brand_id, $brand->brand_name);
         }, $listbrands);
 
-        include 'views/index.view.php';
+        // include 'views/index.view.php';
+        return view('index', ['listbrands' => $listbrands]);
     }
 
     public function about()
     {
+        return view('about');
     }
 
     public function contact()
     {
+        // require 'views/contact.view.php';
+
+        return view('contact');
     }
 }
