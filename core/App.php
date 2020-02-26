@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Core;
+
+
 class App
 {
     protected static $registry = [];
@@ -12,7 +15,7 @@ class App
     public static function get($key)
     {
         if (! array_key_exists($key, static::$registry)) {
-            throw new Exception("Không tìm thấy {$key} trong container");
+            throw new \Exception("Không tìm thấy {$key} trong container");
         }
 
         return static::$registry[$key];

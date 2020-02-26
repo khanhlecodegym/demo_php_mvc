@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 class Brand
 {
     public $brand_id;

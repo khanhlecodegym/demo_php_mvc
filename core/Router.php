@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class Router {
     // protected $routes = [];
 
@@ -48,17 +50,17 @@ class Router {
             );
         }
 
-        throw new Exception("Route {$uri} Không xác định");
+        throw new \Exception("Route {$uri} Không xác định");
     }
 
     protected function callAction($controller, $action)
     {
-        // $controller = "App\\Controllers\\{$controller}";
+        $controller = "App\\Controllers\\{$controller}";
         
         $controller = new $controller;
 
         if (! method_exists($controller, $action)) {
-            throw new Exception(
+            throw new \Exception(
                 "{$controller} does not respond to the {$action} action."
             );
         }

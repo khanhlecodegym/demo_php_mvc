@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Core\App;
+use App\Models\Brand;
+
 class PagesController
 {
     public function home()
